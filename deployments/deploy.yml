@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: basic_std
+  name: basic-std
 spec:
   replicas: 3
   selector:
