@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basic_std
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fe
+  template:
+    metadata:
+      name: student-ui-pods
+      labels:
+        app: fe
+    spec:
+      containers:
+      - name: student-containers
+        image: 767398128098.dkr.ecr.us-east-2.amazonaws.com/my_repo:13-13
+        ports:
+        - containerPort: 8080
+
