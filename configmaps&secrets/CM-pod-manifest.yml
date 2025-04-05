@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mera-pod
+spec:
+  containers:
+    - name: laude-ka
+      image: nginx
+      volumeMounts:
+        - name: cpass
+          mountPath: /mnt/
+  volumes:
+    - name: cpass
+      configMap:
+        name: m-config-map

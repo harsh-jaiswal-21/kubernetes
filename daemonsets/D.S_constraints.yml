@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-monitor-ds
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+       app: monitoring
+  template:
+    metadata:
+      labels:
+        app: monitoring
+    spec:
+      containers:
+      - name: metric-server
+        image: bitnami/metrics-server
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                 - key: color
+                   operator: "In"
+                   values:
+                   - blue
+                   - red
+       

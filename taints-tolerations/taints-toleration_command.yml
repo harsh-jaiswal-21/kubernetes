@@ -1,0 +1,16 @@
+Commands 
+
+TO TAINT A NODE
+
+"kubectl taint nodes <node_name> key1=value1:taint-effect (NoSchedule/NoExecute/PreferNoSchedule")
+eg:- 
+"kubectl taint nodes node01 myapp=myapp:NoSchedule"
+
+TO REMOVE A NODE
+
+"kubectl taint nodes <node_name> key1=value1:taint-effect- (NoSchedule/NoExecute/PreferNoSchedule-")
+"kubectl taint nodes node01 myapp=myapp-frontend:NoSchedule-"
+
+TO CHECK IF THE TAINS IS THERE ON NODE OR NOT 
+
+"kubectl describe nodes controlplane | grep Taints"

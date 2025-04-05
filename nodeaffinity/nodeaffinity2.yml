@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue
+spec:
+  template:
+    metadata:
+      name: blue-pod
+      labels:
+        app: blue
+    spec:
+      containers:
+      - name: blue-cont
+        image: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            -  matchExpressions:
+               - key: color
+                 operator: In
+                 values:
+                 -  blue
+  replicas: 3
+  selector:
+    matchLabels:
+      app: blue

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 4
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: fe
+  template:
+    metadata:
+      name: bankai-nigga
+      labels:
+        app: fe
+    spec:
+      containers:
+      - name: nga-conr
+        image: nginx
+        ports:
+        - containerPort: 80    

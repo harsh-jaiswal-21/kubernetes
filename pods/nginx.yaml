@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nigga-nix
+    tier: backend
+spec:
+  containers:
+    - name: nigga-cont-1
+      image: nginx 

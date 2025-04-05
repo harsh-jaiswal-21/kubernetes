@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+spec:
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+      metadata:
+        name: frontend-pods
+        labels:
+          tier: frontend
+      spec:
+        containers:
+         - name: nigga-container
+           image: nginx
+  replicas: 5
