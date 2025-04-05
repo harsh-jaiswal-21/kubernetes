@@ -6,7 +6,7 @@ TO TAINT A NODE
 eg:- 
 "kubectl taint nodes node01 myapp=myapp:NoSchedule"
 
-TO REMOVE A NODE
+TO REMOVE A Taint From a NODE
 
 "kubectl taint nodes <node_name> key1=value1:taint-effect- (NoSchedule/NoExecute/PreferNoSchedule-")
 "kubectl taint nodes node01 myapp=myapp-frontend:NoSchedule-"
